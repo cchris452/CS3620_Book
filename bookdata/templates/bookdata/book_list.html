@@ -34,14 +34,15 @@
 {% endfor %}
 <div class="pagination">
     {% if book_object.has_previous %}
-        <a href="?page=1">First<a/> &nbsp
-        <a href="?page={{ book_object.previous_page_number}}">Previous</a> &nbsp
+        <a class="page-link" href="?page=1">First<a/> 
+        <a class="page-link" href="?page={{ book_object.previous_page_number}}">Previous</a> 
     {% endif %}
-
-    Page: {{ book_object.number }} of {{book_object.paginator.num_pages }} &nbsp
+    <div style="border: 2px solid #dee2e6; padding: 10px;">        
+        Page: {{ book_object.number }} of {{book_object.paginator.num_pages }} 
+    </div>
     {% if book_object.has_next %}
-            <a href="?page={{ book_object.next_page_number }}">Next</a> &nbsp
-            <a href="?page={{ book_object.paginator.num_pages }}">Last</a>
+            <a class="page-link" href="?page={{ book_object.next_page_number }}">Next</a> 
+            <a class="page-link" href="?page={{ book_object.paginator.num_pages }}">Last</a>
     {% endif%}
 </div>
 </body>
